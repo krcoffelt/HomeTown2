@@ -8,32 +8,27 @@ const ServicesPreview = () => {
     {
       icon: Instagram,
       title: 'Social Media Management',
-      description: 'Stop losing customers to competitors with better social media. Get consistent, engaging content that builds your audience.',
-      color: 'from-hometown-green to-hometown-green-light'
+      bullets: ['Consistent posting schedule', 'Engaging content creation', 'Audience growth strategies']
     },
     {
       icon: Globe,
       title: 'Website Design & SEO',
-      description: 'Convert visitors into customers with a website that works. Fast, professional sites optimized for search engines.',
-      color: 'from-hometown-green to-hometown-green-light'
+      bullets: ['Fast, professional websites', 'Search engine optimization', 'Conversion-focused design']
     },
     {
       icon: Palette,
       title: 'Design & Branding',
-      description: 'Stand out in Kansas City with a memorable brand. Professional logos, colors, and visuals that build trust.',
-      color: 'from-hometown-green to-hometown-green-light'
+      bullets: ['Professional logo design', 'Brand color systems', 'Visual identity packages']
     },
     {
       icon: TrendingUp,
       title: 'Advertising',
-      description: 'Get your message in front of the right people. Targeted ads that drive traffic and generate leads.',
-      color: 'from-hometown-green to-hometown-green-light'
+      bullets: ['Targeted ad campaigns', 'Lead generation ads', 'Performance tracking']
     },
     {
       icon: Mail,
       title: 'Email Marketing',
-      description: 'Turn your email list into a revenue-generating machine. Automated campaigns that nurture relationships and drive sales.',
-      color: 'from-hometown-green to-hometown-green-light'
+      bullets: ['Automated campaigns', 'List segmentation', 'Revenue optimization']
     }
   ]
 
@@ -82,9 +77,11 @@ const ServicesPreview = () => {
                   {service.title}
                 </h3>
                 
-                <p className="text-hometown-green leading-relaxed text-sm group-hover:text-hometown-green-dark/90 transition-colors duration-300">
-                  {service.description}
-                </p>
+                <ul className="list-disc list-inside text-hometown-green leading-relaxed text-sm group-hover:text-hometown-green-dark/90 transition-colors duration-300">
+                  {service.bullets.map((bullet, bulletIndex) => (
+                    <li key={bulletIndex}>{bullet}</li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}

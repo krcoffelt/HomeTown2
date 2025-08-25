@@ -32,9 +32,9 @@ const Navigation = () => {
             <Image
               src="/HomeTownMarketingLogo.png"
               alt="HomeTown Marketing Logo"
-              width={40}
-              height={40}
-              className="w-10 h-10 object-contain"
+              width={48}
+              height={48}
+              className="w-12 h-12 object-contain"
             />
           </Link>
 
