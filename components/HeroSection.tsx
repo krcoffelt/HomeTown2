@@ -45,7 +45,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Your Marketing Is
-              <span className="block text-gray-200 mt-2">
+              <span className="block text-white mt-2">
                 Costing You
               </span>
             </motion.h1>

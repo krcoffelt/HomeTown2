@@ -55,7 +55,7 @@ const ServicesPreview = () => {
         >
           <h2 className="text-5xl md:text-6xl font-serif font-medium text-hometown-green mb-8 leading-tight">
             Stop Losing Customers to
-            <span className="block text-hometown-green-light">Better Marketing</span>
+            <span className="block text-hometown-green">Better Marketing</span>
           </h2>
           <p className="text-xl md:text-2xl text-hometown-green max-w-4xl mx-auto leading-relaxed">
             These are the five core marketing services that Kansas City small businesses actually need to compete and grow. 

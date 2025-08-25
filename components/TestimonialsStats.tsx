@@ -65,7 +65,7 @@ const TestimonialsStats = () => {
         >
           <h2 className="text-5xl md:text-6xl font-serif font-medium text-white mb-8 leading-tight">
             The Marketing Reality for
-            <span className="block text-gray-200">KC Businesses</span>
+            <span className="block text-white">KC Businesses</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto mb-20 leading-relaxed">
             These aren't just statistics – they're the daily challenges facing Kansas City small businesses. 
@@ -108,7 +108,7 @@ const TestimonialsStats = () => {
         >
           <h3 className="text-4xl md:text-5xl font-serif font-medium text-white mb-8 leading-tight">
             Real Results for
-            <span className="block text-gray-200">Real Businesses</span>
+            <span className="block text-white">Real Businesses</span>
           </h3>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
