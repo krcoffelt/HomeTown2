@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
@@ -19,7 +20,7 @@ const Navigation = () => {
 
   return (
     <motion.nav 
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100"
+      className="fixed top-0 left-0 right-0 z-50 bg-hometown-green/95 backdrop-blur-md border-b border-white/20"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -27,13 +28,14 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-hometown-green rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">K</span>
-            </div>
-            <span className="text-2xl font-serif font-semibold text-hometown-green">
-              HomeTown
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/HomeTownMarketingLogo.png"
+              alt="HomeTown Marketing Logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,7 +44,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-hometown-green hover:text-hometown-green-dark transition-colors duration-300 font-medium"
+                className="text-white hover:text-gray-200 transition-colors duration-300 font-medium"
               >
                 {item.name}
               </Link>
@@ -57,7 +59,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-hometown-green"
+            className="md:hidden p-2 text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -67,7 +69,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <motion.div
-            className="md:hidden border-t border-gray-100 bg-white"
+            className="md:hidden border-t border-white/20 bg-hometown-green/98"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -78,7 +80,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-2 text-hometown-green hover:text-hometown-green-dark transition-colors duration-300 font-medium"
+                  className="block px-4 py-2 text-white hover:text-gray-200 transition-colors duration-300 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

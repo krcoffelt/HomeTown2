@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 
 const Footer = () => {
@@ -30,13 +31,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-hometown-green font-bold text-xl">K</span>
-              </div>
-              <span className="text-2xl font-serif font-semibold text-white">
-                HomeTown
-              </span>
+            <div className="flex items-center space-x-3 mb-6">
+              <Image
+                src="/HomeTownMarketingLogo.png"
+                alt="HomeTown Marketing Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
             </div>
             <p className="text-white/90 mb-6 max-w-md">
               I help Kansas City small businesses grow through smart, effective marketing. 

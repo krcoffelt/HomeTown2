@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('next').NextConfig} */
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,10 +15,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['CustomFont', 'Times New Roman', 'Times', 'serif'],
-        times: ['Times New Roman', 'Times', 'serif'],
-        custom: ['CustomFont', 'serif'],
+        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        serif: ['Ethic Serif', 'Times New Roman', 'Times', 'serif'],
+        'ethic-serif': ['Ethic Serif', 'serif'],
+        'ethic-new': ['Ethic New', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

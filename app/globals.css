@@ -65,13 +65,13 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Ethic Serif', 'Times New Roman', 'Times', serif;
-    font-weight: 500; /* Medium weight for main headers */
+    font-family: 'Ethic Serif', 'Times New Roman', 'Times', serif !important;
+    font-weight: 500 !important; /* Medium weight for main headers */
     color: white;
   }
   
   h1 {
-    font-weight: 700; /* Bold for main H1 */
+    font-weight: 700 !important; /* Bold for main H1 */
   }
 }
 
@@ -90,5 +90,13 @@
   
   .container-custom {
     @apply max-w-7xl mx-auto;
+  }
+  
+  .font-ethic-serif {
+    font-family: 'Ethic Serif', serif;
+  }
+  
+  .font-ethic-new {
+    font-family: 'Ethic New', sans-serif;
   }
 }
