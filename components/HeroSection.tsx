@@ -27,7 +27,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center mx-auto mb-12 shadow-2xl"
+              className="w-24 h-24 bg-white/90 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-12 shadow-2xl border border-white/40"
             >
               <Image
                 src="/HomeTownMarketingLogo.png"
@@ -88,17 +88,17 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
             >
-              <div className="bg-white/8 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/12 transition-all duration-300 group">
+              <div className="bg-white/12 backdrop-blur-xl rounded-2xl p-8 border border-white/30 hover:bg-white/16 transition-all duration-300 group shadow-2xl">
                 <div className="text-4xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">100%</div>
                 <div className="text-gray-200 font-medium">Local Focus</div>
                 <div className="text-white/60 text-sm mt-2">Kansas City born & raised</div>
               </div>
-              <div className="bg-white/8 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/12 transition-all duration-300 group">
+              <div className="bg-white/12 backdrop-blur-xl rounded-2xl p-8 border border-white/30 hover:bg-white/16 transition-all duration-300 group shadow-2xl">
                 <div className="text-4xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">24-48h</div>
                 <div className="text-gray-200 font-medium">Turnaround</div>
                 <div className="text-white/60 text-sm mt-2">Most projects completed</div>
               </div>
-              <div className="bg-white/8 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/12 transition-all duration-300 group">
+              <div className="bg-white/12 backdrop-blur-xl rounded-2xl p-8 border border-white/30 hover:bg-white/16 transition-all duration-300 group shadow-2xl">
                 <div className="text-4xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">$0</div>
                 <div className="text-gray-200 font-medium">Setup Fees</div>
                 <div className="text-white/60 text-sm mt-2">Start immediately</div>

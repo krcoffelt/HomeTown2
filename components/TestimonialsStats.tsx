@@ -82,7 +82,7 @@ const TestimonialsStats = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center group"
               >
-                <div className="bg-white/8 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/12 transition-all duration-300 h-full">
+                <div className="bg-white/12 backdrop-blur-xl rounded-3xl p-8 border border-white/30 hover:bg-white/16 transition-all duration-300 h-full shadow-2xl">
                   <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <stat.icon className={`w-10 h-10 ${stat.color}`} />
                   </div>
@@ -121,9 +121,9 @@ const TestimonialsStats = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="group"
               >
-                <div className="bg-white/8 backdrop-blur-sm rounded-3xl p-10 border border-white/20 hover:bg-white/12 transition-all duration-300 h-full">
+                <div className="bg-white/12 backdrop-blur-xl rounded-3xl p-10 border border-white/30 hover:bg-white/16 transition-all duration-300 h-full shadow-2xl">
                   <div className="text-center mb-8">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/20 group-hover:border-white/30 transition-colors duration-300">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/30 group-hover:border-white/40 transition-colors duration-300">
                       <img
                         src={testimonial.avatar}
                         alt={testimonial.author}

@@ -73,7 +73,7 @@ const ServicesPreview = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-gray-50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 hover:border-hometown-green/30 h-full">
+              <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-3 border border-white/60 hover:border-hometown-green/40 h-full">
                 <div className="w-20 h-20 rounded-2xl bg-hometown-green flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   <service.icon className="w-10 h-10 text-white" />
                 </div>
@@ -97,13 +97,13 @@ const ServicesPreview = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center"
         >
-          <div className="bg-hometown-green rounded-3xl p-12 text-white max-w-3xl mx-auto">
+          <div className="bg-hometown-green/90 backdrop-blur-xl rounded-3xl p-12 text-white max-w-3xl mx-auto border border-hometown-green/30 shadow-2xl">
             <p className="text-xl text-white mb-8 font-medium">
               Ready to stop losing customers and start growing your business?
             </p>
             <a
               href="/services"
-              className="bg-white text-hometown-green px-10 py-4 rounded-md text-lg inline-block hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 font-semibold"
+              className="bg-white text-hometown-green px-10 py-4 rounded-md text-lg inline-block hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg"
             >
               See Full Service Details
             </a>
