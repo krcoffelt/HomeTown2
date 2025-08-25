@@ -99,39 +99,43 @@ const ServiceDetails = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+              className="relative group"
             >
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="w-16 h-16 bg-hometown-green rounded-xl flex items-center justify-center flex-shrink-0">
-                  <service.icon className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-serif font-bold text-hometown-green mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-hometown-green leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <h4 className="font-semibold text-hometown-green mb-3">What's Included:</h4>
-                {service.features.map((feature) => (
-                  <div key={feature} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-hometown-green flex-shrink-0" />
-                    <span className="text-hometown-green">{feature}</span>
+              {/* Subtle gradient background for frosted glass effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-hometown-green/5 to-white/10 rounded-2xl blur-sm"></div>
+              <div className="relative bg-white/90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-300">
+                <div className="flex items-start space-x-4 mb-6">
+                  <div className="w-16 h-16 bg-hometown-green rounded-xl flex items-center justify-center flex-shrink-0">
+                    <service.icon className="w-8 h-8 text-white" />
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <h3 className="text-2xl font-serif font-bold text-hometown-green mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-hometown-green leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
 
-              <div className="mt-6 pt-6 border-t border-gray-100">
-                <a
-                  href="/contact"
-                  className="btn-primary w-full text-center"
-                >
-                  Get Started
-                </a>
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-hometown-green mb-3">What's Included:</h4>
+                  {service.features.map((feature) => (
+                    <div key={feature} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-hometown-green flex-shrink-0" />
+                      <span className="text-hometown-green">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <a
+                    href="/contact"
+                    className="btn-primary w-full text-center"
+                  >
+                    Get Started
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

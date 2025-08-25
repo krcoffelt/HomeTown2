@@ -3,8 +3,30 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Home, Zap, DollarSign } from 'lucide-react'
 
 const HeroSection = () => {
+  const socialProofData = [
+    {
+      value: "100%",
+      label: "Local Focus",
+      description: "Kansas City Born & Raised",
+      icon: Home
+    },
+    {
+      value: "24-48h",
+      label: "Turnaround",
+      description: "Quick Response Time",
+      icon: Zap
+    },
+    {
+      value: "$0",
+      label: "Setup Fees",
+      description: "No Hidden Costs",
+      icon: DollarSign
+    }
+  ]
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hometown-green">
       {/* Background Pattern */}
@@ -21,89 +43,111 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-32 h-32 bg-white/90 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-12 shadow-2xl border border-white/40"
-            >
-              <Image
-                src="/HomeTownMarketingLogo.png"
-                alt="HomeTown Marketing Logo"
-                width={80}
-                height={80}
-                className="w-20 h-20 object-contain"
-              />
-            </motion.div>
-
-            <motion.h1 
-              className="text-6xl sm:text-7xl md:text-8xl font-serif font-medium mb-8 leading-[0.9] text-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif font-medium mb-8 leading-[0.9] text-white text-balance">
               Your Marketing Is
-              <span className="block text-white mt-2">
+              <span className="block text-white italic mt-2">
                 Costing You
               </span>
-            </motion.h1>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed text-balance">
+              Stop losing customers to competitors with better marketing. 
+              Get consistent, engaging content that builds your audience and drives results.
+            </p>
+          </motion.div>
             
-            <motion.p 
-              className="text-2xl md:text-3xl text-gray-200 leading-relaxed mb-12 max-w-4xl mx-auto font-light"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              While you're busy running your Kansas City business, your competitors are winning customers 
-              with better marketing. Stop losing opportunities and start growing.
-            </motion.p>
-            
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
+          >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Link
                 href="/contact"
-                className="btn-primary text-xl px-16 py-5 text-lg inline-block shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+                className="btn-primary text-xl px-16 py-5"
               >
                 Get Your Free Marketing Audit
               </Link>
-              
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
               <Link
                 href="/services"
-                className="btn-secondary text-xl px-12 py-5 border-2 border-white/30 hover:border-white/50 transition-all duration-300"
+                className="btn-secondary text-xl px-12 py-5"
               >
                 See How We Help
               </Link>
             </motion.div>
+          </motion.div>
 
-            {/* Enhanced Social Proof */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-            >
-              <div className="bg-white/8 rounded-2xl p-8 border border-white/20 hover:bg-white/12 hover:backdrop-blur-xl transition-all duration-300 group shadow-lg hover:shadow-2xl">
-                <div className="text-4xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">100%</div>
-                <div className="text-gray-200 font-medium">Local Focus</div>
-                <div className="text-white/60 text-sm mt-2">Kansas City born & raised</div>
-              </div>
-              <div className="bg-white/8 rounded-2xl p-8 border border-white/20 hover:bg-white/12 hover:backdrop-blur-xl transition-all duration-300 group shadow-lg hover:shadow-2xl">
-                <div className="text-4xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">24-48h</div>
-                <div className="text-gray-200 font-medium">Turnaround</div>
-                <div className="text-white/60 text-sm mt-2">Most projects completed</div>
-              </div>
-              <div className="bg-white/8 rounded-2xl p-8 border border-white/20 hover:bg-white/12 hover:backdrop-blur-xl transition-all duration-300 group shadow-lg hover:shadow-2xl">
-                <div className="text-4xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">$0</div>
-                <div className="text-gray-200 font-medium">Setup Fees</div>
-                <div className="text-white/60 text-sm mt-2">Start immediately</div>
-              </div>
-            </motion.div>
+          {/* Enhanced Social Proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          >
+            {socialProofData.map((item, index) => (
+              <motion.div
+                key={item.value}
+                className="relative group cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 + index * 0.1 }}
+                whileHover={{ 
+                  scale: 1.02,
+                  y: -2
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {/* Card content */}
+                <div className="relative bg-white/20 backdrop-blur-xl rounded-2xl p-6 text-center border border-white/30 shadow-2xl transition-all duration-300 group-hover:bg-white/30 group-hover:shadow-3xl">
+                  {/* Icon */}
+                  <motion.div
+                    className="text-4xl mb-3 flex justify-center"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 1 + index * 0.1, type: "spring", stiffness: 200 }}
+                  >
+                    <item.icon className="w-12 h-12 text-white" />
+                  </motion.div>
+                  
+                  {/* Value */}
+                  <div className="text-3xl font-bold text-white mb-2 group-hover:text-white transition-colors duration-300">
+                    {item.value}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-white/90 text-sm font-medium mb-2">
+                    {item.label}
+                  </div>
+                  
+                  {/* Description */}
+                  <motion.div
+                    className="text-white/60 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  >
+                    {item.description}
+                  </motion.div>
+                  
+                  {/* Hover indicator */}
+                  <motion.div
+                    className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
@@ -115,13 +159,32 @@ const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
       >
-        <div className="w-8 h-12 border-2 border-white/30 rounded-full flex justify-center backdrop-blur-sm bg-white/5">
+        <motion.div 
+          className="w-8 h-12 border-2 border-white/30 rounded-full flex justify-center backdrop-blur-sm bg-white/5 cursor-pointer group hover:border-white/50 hover:bg-white/10 transition-all duration-300"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => {
+            const nextSection = document.querySelector('.section-padding')
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: 'smooth' })
+            }
+          }}
+        >
           <motion.div
-            className="w-1.5 h-4 bg-white rounded-full mt-3"
-            animate={{ y: [0, 16, 0] }}
+            className="w-1.5 h-4 bg-white rounded-full mt-3 group-hover:bg-white/80 transition-colors duration-300"
+            animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           />
-        </div>
+        </motion.div>
+        
+        {/* Scroll hint text */}
+        <motion.p
+          className="text-white/60 text-xs mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+        >
+          Scroll to explore
+        </motion.p>
       </motion.div>
     </section>
   )

@@ -65,7 +65,7 @@ const TestimonialsStats = () => {
         >
           <h2 className="text-5xl md:text-6xl font-serif font-medium text-white mb-8 leading-tight">
             The Marketing Reality for
-            <span className="block text-white">KC Businesses</span>
+            <span className="block text-white italic">KC Businesses</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto mb-20 leading-relaxed">
             These aren't just statistics – they're the daily challenges facing Kansas City small businesses. 
@@ -82,17 +82,18 @@ const TestimonialsStats = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center group"
               >
-                <div className="bg-white/12 backdrop-blur-xl rounded-3xl p-8 border border-white/30 hover:bg-white/16 transition-all duration-300 h-full shadow-2xl">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <stat.icon className={`w-10 h-10 ${stat.color}`} />
+                <motion.div
+                  key={stat.label}
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative bg-white/20 backdrop-blur-xl rounded-2xl p-8 text-center border border-white/30 shadow-2xl hover:bg-white/30 transition-all duration-300">
+                    <div className="text-4xl font-bold text-white mb-3 group-hover:scale-105 transition-transform duration-300">{stat.number}</div>
+                    <div className="text-white/90 font-medium">{stat.label}</div>
+                    <div className="text-white/60 text-sm mt-2">{stat.color}</div>
                   </div>
-                  <div className="text-5xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">
-                    {stat.number}
-                  </div>
-                  <p className="text-gray-200 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">
-                    {stat.label}
-                  </p>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -108,7 +109,7 @@ const TestimonialsStats = () => {
         >
           <h3 className="text-4xl md:text-5xl font-serif font-medium text-white mb-8 leading-tight">
             Real Results for
-            <span className="block text-white">Real Businesses</span>
+            <span className="block text-white italic">Real Businesses</span>
           </h3>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -121,27 +122,25 @@ const TestimonialsStats = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="group"
               >
-                <div className="bg-white/12 backdrop-blur-xl rounded-3xl p-10 border border-white/30 hover:bg-white/16 transition-all duration-300 h-full shadow-2xl">
-                  <div className="text-center mb-8">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/30 group-hover:border-white/40 transition-colors duration-300">
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.author}
-                        className="w-full h-full object-cover"
-                      />
+                <motion.div
+                  key={testimonial.author}
+                  className="relative group"
+                  whileHover={{ scale: 1.01 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative bg-white/20 backdrop-blur-xl rounded-2xl p-8 border border-white/30 shadow-2xl hover:bg-white/30 transition-all duration-300">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-2xl font-bold text-white">{testimonial.author.charAt(0)}</span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white">{testimonial.author}</div>
+                        <div className="text-white/70 text-sm">{testimonial.business}</div>
+                      </div>
                     </div>
-                    <h4 className="text-xl font-semibold text-white mb-2">
-                      {testimonial.author}
-                    </h4>
-                    <p className="text-gray-200 text-sm">
-                      {testimonial.business}
-                    </p>
+                    <p className="text-white/90 leading-relaxed italic">"{testimonial.quote}"</p>
                   </div>
-                  
-                  <blockquote className="text-lg text-gray-200 leading-relaxed italic group-hover:text-white/90 transition-colors duration-300">
-                    "{testimonial.quote}"
-                  </blockquote>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
