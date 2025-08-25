@@ -38,25 +38,32 @@ const ServicesPreview = () => {
   ]
 
   return (
-    <section className="section-padding bg-gray-50">
-      <div className="container-custom">
+    <section className="section-padding relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 right-10 w-40 h-40 border border-white/20 rounded-full"></div>
+        <div className="absolute bottom-1/4 left-10 w-32 h-32 border border-white/20 rounded-full"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-hometown-green mb-6">
-            Stop Losing Customers to Better Marketing
+          <h2 className="text-5xl md:text-6xl font-serif font-medium text-white mb-8 leading-tight">
+            Stop Losing Customers to
+            <span className="block text-gray-200">Better Marketing</span>
           </h2>
-          <p className="text-xl text-hometown-green max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
             These are the five core marketing services that Kansas City small businesses actually need to compete and grow. 
             No fluff, no complicated packages – just what works.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -66,16 +73,16 @@ const ServicesPreview = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-8 h-8 text-white" />
+              <div className="bg-white/8 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-white/20 hover:border-white/30 h-full">
+                <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <service.icon className="w-10 h-10 text-hometown-green" />
                 </div>
                 
-                <h3 className="text-xl font-semibold text-hometown-green mb-4">
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-gray-200 transition-colors duration-300">
                   {service.title}
                 </h3>
                 
-                <p className="text-hometown-green leading-relaxed">
+                <p className="text-gray-200 leading-relaxed text-sm group-hover:text-white/90 transition-colors duration-300">
                   {service.description}
                 </p>
               </div>
@@ -88,17 +95,19 @@ const ServicesPreview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
+          className="text-center"
         >
-          <p className="text-lg text-hometown-green mb-8">
-            Ready to stop losing customers and start growing your business?
-          </p>
-          <a
-            href="/services"
-            className="btn-secondary text-lg px-8 py-3"
-          >
-            See Full Service Details
-          </a>
+          <div className="bg-white/8 backdrop-blur-sm rounded-3xl p-12 border border-white/20 max-w-3xl mx-auto">
+            <p className="text-xl text-white mb-8 font-medium">
+              Ready to stop losing customers and start growing your business?
+            </p>
+            <a
+              href="/services"
+              className="btn-secondary text-lg px-10 py-4 inline-block hover:bg-white hover:text-hometown-green transition-all duration-300 transform hover:scale-105"
+            >
+              See Full Service Details
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -9,25 +9,25 @@ const TestimonialsStats = () => {
       icon: TrendingUp,
       number: '85%',
       label: 'of KC small businesses struggle with digital marketing',
-      color: 'text-hometown-green'
+      color: 'text-white'
     },
     {
       icon: Clock,
       number: '12hrs',
       label: 'average time spent weekly on marketing tasks',
-      color: 'text-hometown-green'
+      color: 'text-white'
     },
     {
       icon: DollarSign,
       number: '$0',
       label: 'wasted budget on ineffective marketing strategies',
-      color: 'text-hometown-green'
+      color: 'text-white'
     },
     {
       icon: Users,
       number: '3x',
       label: 'faster growth with professional marketing support',
-      color: 'text-hometown-green'
+      color: 'text-white'
     }
   ]
 
@@ -47,20 +47,27 @@ const TestimonialsStats = () => {
   ]
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
+    <section className="section-padding relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-10 w-48 h-48 border border-white/20 rounded-full"></div>
+        <div className="absolute bottom-1/4 right-10 w-36 h-36 border border-white/20 rounded-full"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-hometown-green mb-6">
-            The Marketing Reality for KC Businesses
+          <h2 className="text-5xl md:text-6xl font-serif font-medium text-white mb-8 leading-tight">
+            The Marketing Reality for
+            <span className="block text-gray-200">KC Businesses</span>
           </h2>
-          <p className="text-xl text-hometown-green max-w-3xl mx-auto mb-16">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto mb-20 leading-relaxed">
             These aren't just statistics – they're the daily challenges facing Kansas City small businesses. 
             Every day you wait is another day your competitors are winning your customers.
           </p>
@@ -73,17 +80,19 @@ const TestimonialsStats = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center group"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
-                  <stat.icon className={`w-8 h-8 ${stat.color}`} />
+                <div className="bg-white/8 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/12 transition-all duration-300 h-full">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <stat.icon className={`w-10 h-10 ${stat.color}`} />
+                  </div>
+                  <div className="text-5xl font-bold text-white mb-3 group-hover:scale-110 transition-transform duration-300">
+                    {stat.number}
+                  </div>
+                  <p className="text-gray-200 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                    {stat.label}
+                  </p>
                 </div>
-                <div className="text-4xl font-bold text-hometown-green mb-2">
-                  {stat.number}
-                </div>
-                <p className="text-hometown-green text-sm leading-relaxed">
-                  {stat.label}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -95,69 +104,46 @@ const TestimonialsStats = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center"
         >
-          <h3 className="text-3xl font-serif font-bold text-hometown-green mb-6">
-            Real Results from Real KC Businesses
+          <h3 className="text-4xl md:text-5xl font-serif font-medium text-white mb-8 leading-tight">
+            Real Results for
+            <span className="block text-gray-200">Real Businesses</span>
           </h3>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.author}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-gray-50 rounded-2xl p-8 border border-gray-100"
-            >
-              <div className="flex items-start space-x-4">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.author}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div className="flex-1">
-                  <blockquote className="text-hometown-green text-lg leading-relaxed mb-4">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.author}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="group"
+              >
+                <div className="bg-white/8 backdrop-blur-sm rounded-3xl p-10 border border-white/20 hover:bg-white/12 transition-all duration-300 h-full">
+                  <div className="text-center mb-8">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white/20 group-hover:border-white/30 transition-colors duration-300">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.author}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h4 className="text-xl font-semibold text-white mb-2">
+                      {testimonial.author}
+                    </h4>
+                    <p className="text-gray-200 text-sm">
+                      {testimonial.business}
+                    </p>
+                  </div>
+                  
+                  <blockquote className="text-lg text-gray-200 leading-relaxed italic group-hover:text-white/90 transition-colors duration-300">
                     "{testimonial.quote}"
                   </blockquote>
-                  <div>
-                    <div className="font-semibold text-hometown-green">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-hometown-green-light text-sm">
-                      {testimonial.business}
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-hometown-green rounded-2xl p-12 text-white">
-            <h3 className="text-3xl font-serif font-bold mb-4">
-              Stop Losing Customers Today
-            </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Every day you wait is another day your competitors are winning your customers. 
-              Let's talk about how to turn this around.
-            </p>
-            <a
-              href="/contact"
-              className="bg-white text-hometown-green px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-all duration-300 inline-block"
-            >
-              Get Your Free Marketing Audit
-            </a>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
