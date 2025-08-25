@@ -71,7 +71,7 @@
   }
   
   h1 {
-    font-weight: 700 !important; /* Bold for main H1 */
+    font-weight: 500 !important; /* Medium weight for H1 too */
   }
 }
 
