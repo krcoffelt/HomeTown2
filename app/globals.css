@@ -1,20 +1,48 @@
-/* Custom Font Uploads */
+/* Custom Font Uploads - Ethic Font Family */
 @font-face {
-  font-family: 'CustomFont';
-  src: url('/fonts/your-font.woff2') format('woff2'),
-       url('/fonts/your-font.woff') format('woff'),
-       url('/fonts/your-font.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Ethic Serif';
+  src: url('/fonts/EthicSerif-Regular.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CustomFont';
-  src: url('/fonts/your-font-bold.woff2') format('woff2'),
-       url('/fonts/your-font-bold.woff') format('woff'),
-       url('/fonts/your-font-bold.ttf') format('truetype');
-  font-weight: bold;
+  font-family: 'Ethic Serif';
+  src: url('/fonts/EthicSerif-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ethic Serif';
+  src: url('/fonts/EthicSerif-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ethic New';
+  src: url('/fonts/EthicNew-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ethic New';
+  src: url('/fonts/EthicNew-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ethic New';
+  src: url('/fonts/EthicNew-Bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -30,15 +58,19 @@
   }
   
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     line-height: 1.6;
     color: #006847;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'CustomFont', 'Times New Roman', 'Times', serif;
-    font-weight: 600;
+    font-family: 'Ethic Serif', 'Times New Roman', 'Times', serif;
+    font-weight: 500; /* Medium weight for main headers */
     color: #006847;
+  }
+  
+  h1 {
+    font-weight: 700; /* Bold for main H1 */
   }
 }
 
