@@ -47,8 +47,8 @@ const AboutHero = () => {
           >
             <div className="relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Kansas City Skyline"
+                src="/kyle.remini-enhanced.jpg"
+                alt="Kyle - HomeTown Marketing Founder"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
             </div>
