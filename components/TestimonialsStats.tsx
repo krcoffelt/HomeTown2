@@ -47,7 +47,7 @@ const TestimonialsStats = () => {
   ]
 
   return (
-    <section className="section-padding relative overflow-hidden">
+    <section className="section-padding bg-hometown-green relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-10 w-48 h-48 border border-white/20 rounded-full"></div>
